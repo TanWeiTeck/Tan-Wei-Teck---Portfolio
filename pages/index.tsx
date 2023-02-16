@@ -1,6 +1,7 @@
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
+import { useContext } from 'react';
 import About from '../components/About';
 import Contact from '../components/Contact';
 import Header from '../components/Header';
@@ -8,12 +9,15 @@ import Hero from '../components/Hero';
 import Projects from '../components/Projects';
 import Skills from '../components/Skills';
 import WorkExperince from '../components/WorkExperince';
+import { urlFor } from '../sanity';
 import { Experience, PageInfo, Project, Skill, Social } from '../typings';
 import { fetchExperiences } from '../utils/fetchExperiences';
 import { fetchPageInfo } from '../utils/fetchPageInfo';
 import { fetchProjects } from '../utils/fetchProjects';
 import { fetchSkills } from '../utils/fetchSkills';
 import { fetchSocials } from '../utils/fetchSocials';
+import ScreenShotModal from '../components/ScreenShotModal';
+import SsModalContext from '../components/contexts/useSsModalContext';
 
 type Props = {
     pageInfo: PageInfo;
@@ -24,8 +28,13 @@ type Props = {
 };
 
 const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
+    const { showSsModal, handleShowSsModal, ssModalContent } =
+        useContext(SsModalContext);
+
     return (
-        <div className="bg-[#142733] text-white h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-secondary z-0 scroll-smooth ">
+        <div className="portfoliobg text-black h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scroll-smooth ">
+            <ScreenShotModal />
+
             <Head>
                 <title>Wei Teck Portfolio</title>
             </Head>
@@ -66,7 +75,10 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
                 <Link href="#hero">
                     <img
                         className="fixed bottom-5 right-5 rounded-full h-8 w-8 object-cover grayscale hover:grayscale-0"
-                        src="https://media-exp1.licdn.com/dms/image/C5103AQGaGV_FtHEIGA/profile-displayphoto-shrink_100_100/0/1576573067162?e=1674086400&v=beta&t=BPPxUUgNm8NEZFVzZSgB3UxsT6D-iaJ7sZ2BCyq7Ny8"
+                        src={
+                            urlFor(pageInfo?.heroImage).url() ||
+                            '/assets/images/TWT2.jpeg'
+                        }
                         alt="Tan_wei_teck_profilepic"
                     />
                 </Link>

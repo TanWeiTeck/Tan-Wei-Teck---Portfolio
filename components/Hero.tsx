@@ -12,7 +12,7 @@ const Hero = ({ pageInfo }: Props) => {
     const [text, count] = useTypewriter({
         words: [
             `Hi, I am ${pageInfo?.name || 'Wei Teck'}`,
-            'Front-End Developer',
+            'FrontEnd Developer',
             'React Developer',
         ],
         loop: true,
@@ -31,14 +31,14 @@ const Hero = ({ pageInfo }: Props) => {
                 alt="Tan_wei_teck_profilepic"
             />
             <div className="z-20">
-                <h2 className="text-sm uppercase text-gray-500 tracking-[15px]">
+                <h2 className="text-sm uppercase text-gray-800 tracking-[15px]">
                     {pageInfo?.role}
                 </h2>
                 <h1 className="text-3xl lg:text-4xl font-semibold px-10">
                     <span className="mr-3">#{text}</span>
                     <Cursor cursorColor="red" />
                 </h1>
-                <div className="pt-5">
+                <div className="pt-5 ">
                     <Link href="#about">
                         <button className="heroButton">About</button>
                     </Link>

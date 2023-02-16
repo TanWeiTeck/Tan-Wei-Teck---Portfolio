@@ -8,7 +8,7 @@ type Props = {
 
 const ExperienceCard = ({ experience }: Props) => {
     return (
-        <article className="flex flex-col rounded-lg items-center space-y-2 flex-shrink-0 md:w-[400px] w-[350px] snap-center bg-gray-800 p-5 opacity-70 hover:opacity-100 hover:shadow-2xl cursor-pointer transition-opacity duration-300 overflow-hidden">
+        <article className="flex flex-col rounded-lg items-center space-y-2 flex-shrink-0 md:w-[400px] w-[350px] snap-center bg-gray-200/20 0 p-5 opacity-70 hover:opacity-100 hover:shadow-2xl cursor-pointer transition-opacity duration-300 overflow-hidden">
             <motion.img
                 initial={{
                     y: -100,
@@ -29,14 +29,14 @@ const ExperienceCard = ({ experience }: Props) => {
                 alt=""
             />
             <div className="px-0 md:px-3">
-                <h4 className="text-xl font-light">
+                <h4 className="text-xl font-light text-center">
                     {experience?.jobTitle || 'Engineer'}
                 </h4>
-                <p className="font-bold text-md mt-1">
+                <p className="font-bold text-md mt-1 text-center">
                     {' '}
                     {experience?.company || 'undisclosed'}
                 </p>
-                <div className="flex space-x-1 my-1 md:justify-start justify-center">
+                <div className="flex space-x-1 my-1 justify-center">
                     {experience?.technologies
                         ? experience.technologies.map((technology) => (
                               <img
@@ -48,7 +48,7 @@ const ExperienceCard = ({ experience }: Props) => {
                           ))
                         : ''}
                 </div>
-                <p className="uppercase py-2 text-gray-300">
+                <p className="uppercase py-2 text-gray-300 text-center">
                     {new Date(experience.dateStarted).toLocaleDateString(
                         'en-MY',
                         {

@@ -17,9 +17,9 @@ const WorkExperince = ({ experiences }: Props) => {
             viewport={{
                 once: true,
             }}
-            className="min-h-screen pt-20 flex flex-col justify-evenly text-center md:text-left max-w-6xl px-8 mx-auto items-center"
+            className="pt-28 md:gap-y-16 gap-y-4 flex flex-col text-center md:text-left max-w-6xl px-8 mx-auto items-center"
         >
-            <h3 className="uppercase tracking-[20px] text-gray-500 text-2xl font-thin">
+            <h3 className="uppercase tracking-[20px] text-gray-800 text-2xl font-thin">
                 Experience
             </h3>
             <div className="w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-secondary">

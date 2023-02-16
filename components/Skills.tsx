@@ -19,24 +19,34 @@ const Skills = ({ skills }: Props) => {
             viewport={{
                 once: true,
             }}
-            className="min-h-screen pt-20 flex flex-col justify-evenly text-center md:text-left max-w-5xl px-10 mx-auto items-center"
+            className="pt-28 flex flex-col gap-y-20 justify-evenly text-center md:text-left max-w-5xl px-10 mx-auto items-center"
         >
-            <h3 className="uppercase tracking-[20px] text-gray-500 text-2xl font-thin">
+            <h3 className="uppercase tracking-[20px] text-gray-800 text-2xl font-thin">
                 Skills
             </h3>
 
-            <h3 className="uppercase tracking-[3px] text-gray-500 text-sm pb-4">
-                Hover over a skill for current proficiency
-            </h3>
-
-            <div className="grid grid-cols-4 gap-5">
-                {arrangedSkills?.slice(0, 8).map((skill) => (
+            <div className="m-auto grid grid-cols-4 md:grid-cols-5 gap-6 md:gap-11">
+                {arrangedSkills.map((skill) => (
                     <Skill key={skill._id} skill={skill} />
                 ))}
-                {arrangedSkills?.slice(8, skills.length).map((skill) => (
-                    <Skill key={skill._id} skill={skill} directionLeft />
-                ))}
+                {/* {arrangedSkills
+                        ?.slice(0, Math.floor(skills.length / 2))
+                        .map((skill) => (
+                            <Skill key={skill._id} skill={skill} />
+                            ))}
+                            {arrangedSkills
+                                ?.slice(Math.floor(skills.length / 2), skills.length)
+                                .map((skill) => (
+                                    <Skill
+                                    key={skill._id}
+                                    skill={skill}
+                                    directionLeft
+                                    />
+                                ))} */}
             </div>
+            <h3 className="uppercase tracking-[3px] text-gray-800 text-sm pb-4">
+                Hover over a skill for current proficiency
+            </h3>
         </motion.div>
     );
 };
