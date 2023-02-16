@@ -19,7 +19,7 @@ const Skills = ({ skills }: Props) => {
             viewport={{
                 once: true,
             }}
-            className="pt-28 flex flex-col gap-y-20 justify-evenly text-center md:text-left max-w-5xl px-10 mx-auto items-center"
+            className="py-28 flex flex-col gap-y-20 justify-evenly text-center md:text-left max-w-5xl px-10 mx-auto items-center"
         >
             <h3 className="uppercase tracking-[20px] text-gray-800 text-2xl font-thin">
                 Skills

@@ -1,7 +1,6 @@
 import { GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import { useContext } from 'react';
 import About from '../components/About';
 import Contact from '../components/Contact';
 import Header from '../components/Header';
@@ -17,7 +16,6 @@ import { fetchProjects } from '../utils/fetchProjects';
 import { fetchSkills } from '../utils/fetchSkills';
 import { fetchSocials } from '../utils/fetchSocials';
 import ScreenShotModal from '../components/ScreenShotModal';
-import SsModalContext from '../components/contexts/useSsModalContext';
 
 type Props = {
     pageInfo: PageInfo;
@@ -28,11 +26,8 @@ type Props = {
 };
 
 const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
-    const { showSsModal, handleShowSsModal, ssModalContent } =
-        useContext(SsModalContext);
-
     return (
-        <div className="portfoliobg text-black h-screen snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0 scroll-smooth ">
+        <div className="portfoliobg text-black h-screen snap-y snap-proximity overflow-y-scroll overflow-x-hidden z-0 scroll-smooth ">
             <ScreenShotModal />
 
             <Head>
@@ -42,32 +37,47 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
             <Header socials={socials} />
 
             {/* Hero */}
-            <section id="hero" className="snap-start">
+            <section
+                id="hero"
+                className="snap-center border-b-[1px] border-gray-400"
+            >
                 <Hero pageInfo={pageInfo} />
             </section>
 
             {/* About */}
-            <section id="about" className="snap-start">
+            <section
+                id="about"
+                className="md:snap-start border-b-[1px] border-gray-400"
+            >
                 <About pageInfo={pageInfo} />
             </section>
 
             {/* Experince */}
-            <section id="experince" className="snap-start">
+            <section
+                id="experince"
+                className="md:snap-start border-b-[1px] border-gray-400"
+            >
                 <WorkExperince experiences={experiences} />
             </section>
 
             {/* Skills */}
-            <section id="skills" className="snap-start">
+            <section
+                id="skills"
+                className="md:snap-start border-b-[1px] border-gray-400"
+            >
                 <Skills skills={skills} />
             </section>
 
             {/* projects */}
-            <section id="projects" className="snap-start">
+            <section
+                id="projects"
+                className="md:snap-start border-b-[1px] border-gray-400"
+            >
                 <Projects projects={projects} />
             </section>
 
             {/* contact */}
-            <section id="contact" className="snap-start">
+            <section id="contact" className="">
                 <Contact pageInfo={pageInfo} />
             </section>
 

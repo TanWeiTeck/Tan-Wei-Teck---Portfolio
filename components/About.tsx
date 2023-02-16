@@ -17,7 +17,7 @@ const About = ({ pageInfo }: Props) => {
             viewport={{
                 once: true,
             }}
-            className="pt-28 gap-y-14 md:gap-y-24 flex flex-col justify-evenly text-center md:text-left max-w-5xl px-10 mx-auto items-center"
+            className="py-28 gap-y-14 md:gap-y-24 flex flex-col justify-evenly text-center md:text-left max-w-5xl px-10 mx-auto items-center"
         >
             <h3 className="uppercase tracking-[20px] text-gray-800 text-2xl font-thin">
                 About

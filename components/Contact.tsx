@@ -33,7 +33,7 @@ const Contact = ({ pageInfo }: Props) => {
             }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1.5 }}
-            className="min-h-screen pt-28 flex flex-col justify-evenly text-center md:text-left max-w-5xl md:px-10 px-6 mx-auto items-center"
+            className="min-h-screen py-28 gap-y-20 flex flex-col justify-evenly text-center md:text-left max-w-5xl md:px-10 px-6 mx-auto items-center"
         >
             <h3 className="uppercase tracking-[20px] text-gray-800 text-2xl font-thin">
                 Contact

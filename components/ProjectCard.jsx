@@ -78,7 +78,8 @@ const ProjectCard = ({ project }) => {
                     ))}
                 </div>
                 <p className="text-lg text-center md:text-left text-gray-300">
-                    {project?.summary}
+                    {project?.summary ??
+                        'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est nesciunt tempore, aut voluptatibus repellendus repellat, animi esse quibusdam voluptate expedita magni libero modi illum facere veritatis explicabo doloremque sapiente amet!'}
                 </p>
             </div>
         </>

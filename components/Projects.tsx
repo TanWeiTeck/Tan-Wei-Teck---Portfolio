@@ -23,7 +23,7 @@ const Projects = ({ projects }: Props) => {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1.5 }}
             viewport={{ once: true }}
-            className="min-h-screen relative pt-20 flex flex-col justify-evenly text-center md:max-w-6xl px-10 mx-auto items-center"
+            className="relative py-28 gap-y-20 flex flex-col justify-evenly text-center md:max-w-6xl px-10 mx-auto items-center"
         >
             <div className="w-screen absolute top-[30%] bg-secondary/20 h-[300px] -skew-y-12"></div>
 
